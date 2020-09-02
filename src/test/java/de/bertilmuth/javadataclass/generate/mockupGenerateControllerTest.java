@@ -1,15 +1,21 @@
 package de.bertilmuth.javadataclass.generate;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.json.JSONException;
 import org.junit.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 import de.bertilmuth.javadataclass.model.ClassSpecification;
 import de.bertilmuth.javadataclass.model.FieldSpecification;
 import de.bertilmuth.javadataclass.model.FuncSpecification;
+import de.bertilmuth.javadataclass.util.JsonBuilder;
 
 public class mockupGenerateControllerTest {
 
@@ -60,6 +66,16 @@ public class mockupGenerateControllerTest {
 	}
 	
 	@Test
+	public void testJsonBuilder() throws JSONException {
+		String json = new JsonBuilder()
+				.add("key", "value")
+				.toJson();
+
+		JSONAssert.assertEquals("{\"key\":\"value\"}", json, false);
+		System.out.println(json);
+	}
+	
+//	@Test
 	public void testReturnCustomClassSpec() throws Exception { 
 		//given
 		FieldSpecification field = new FieldSpecification("test", "String");
