@@ -12,6 +12,8 @@ import org.json.JSONException;
 import org.junit.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
 
+import com.google.gson.JsonObject;
+
 import de.bertilmuth.javadataclass.model.ClassSpecification;
 import de.bertilmuth.javadataclass.model.FieldSpecification;
 import de.bertilmuth.javadataclass.model.FuncSpecification;
@@ -65,7 +67,7 @@ public class mockupGenerateControllerTest {
 		generator.generateJavaSourceFiles(Arrays.asList(classSpec), file);
 	}
 	
-	@Test
+//	@Test
 	public void testJsonBuilder() throws JSONException {
 		String json = new JsonBuilder()
 				.add("key", "value")
@@ -76,6 +78,15 @@ public class mockupGenerateControllerTest {
 	}
 	
 //	@Test
+	public void testJsonValue() {
+		System.out.println(
+				new JsonBuilder()
+					.add("key", "value")
+					.toJson()
+		);		
+	}
+	
+	@Test
 	public void testReturnCustomClassSpec() throws Exception { 
 		//given
 		FieldSpecification field = new FieldSpecification("test", "String");
