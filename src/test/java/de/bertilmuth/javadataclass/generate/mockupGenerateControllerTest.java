@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import de.bertilmuth.javadataclass.model.ClassSpecification;
 import de.bertilmuth.javadataclass.model.FieldSpecification;
+import de.bertilmuth.javadataclass.model.FuncSpecification;
 
 public class mockupGenerateControllerTest {
 
@@ -31,7 +32,8 @@ public class mockupGenerateControllerTest {
 	public void testCustomGenerateJavaSourceFiles() throws Exception { 
 		//given
 		FieldSpecification field = new FieldSpecification("test", "String");
-		ClassSpecification classSpec = new ClassSpecification("Test", Arrays.asList(field), "HelloWorld");
+		FuncSpecification func = new FuncSpecification();
+		ClassSpecification classSpec = new ClassSpecification("Test", Arrays.asList(field), func);
 		
 		File file = new File(".");
 		JavaDataClassGenerator generator = new JavaDataClassGenerator();

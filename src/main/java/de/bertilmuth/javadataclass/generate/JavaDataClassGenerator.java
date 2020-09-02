@@ -37,7 +37,7 @@ public class JavaDataClassGenerator {
 		for (ClassSpecification classSpecification : classSpecifications) {
 			// Put the classSpecification into the data model.
 			// It can  be accessed in the template through ${classSpecification}
-			freemarkerDataModel.put("classSpecification", classSpecification);
+			freemarkerDataModel.put("spec", classSpecification);
 			
 			// The Java source file will be generated in the same directory as the YAML file
 			File javaSourceFile = new File(yamlFileDirectory, classSpecification.getName() + ".java");
