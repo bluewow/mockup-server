@@ -6,14 +6,14 @@ import java.util.List;
 public class ClassSpecification {
 	private String name;
 	private List<FieldSpecification> fieldSpecifications;
-	private FuncSpecification funcSpecifications;
+	private List<FuncSpecification> funcSpecifications;
 
 	public ClassSpecification(String className, List<FieldSpecification> fieldSpecifications) {
 		this.name = className;
 		this.fieldSpecifications = fieldSpecifications;
 	}
 	
-	public ClassSpecification(String className, List<FieldSpecification> fieldSpecifications, FuncSpecification funcSpecifications) {
+	public ClassSpecification(String className, List<FieldSpecification> fieldSpecifications, List<FuncSpecification> funcSpecifications) {
 		this.name = className;
 		this.fieldSpecifications = fieldSpecifications;
 		this.funcSpecifications = funcSpecifications;
@@ -27,7 +27,7 @@ public class ClassSpecification {
 		return Collections.unmodifiableList(fieldSpecifications);
 	}
 
-	public FuncSpecification getFuncSpecifications() {
-		return funcSpecifications;
+	public List<FuncSpecification> getFuncSpecifications() {
+		return Collections.unmodifiableList(funcSpecifications);
 	}
 }
