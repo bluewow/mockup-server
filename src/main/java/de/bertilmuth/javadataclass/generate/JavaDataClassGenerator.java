@@ -32,7 +32,7 @@ public class JavaDataClassGenerator {
 		Map<String, Object> freemarkerDataModel = new HashMap<>();
 		
 		// Get the template to generate Java source files
-		Template template = configuration.getTemplate("javadataclass.ftl");
+		Template template = configuration.getTemplate("mockup.ftl");
 		
 		for (ClassSpecification classSpecification : classSpecifications) {
 			// Put the classSpecification into the data model.
