@@ -23,13 +23,11 @@ public class mockupGenerateControllerTest {
 
 		//when
 		generator.generateJavaSourceFiles(Arrays.asList(classSpec), file);
-		
-		//then
 	}
 	
 	//customDataClassGenerator
 	@Test
-	public void testCustomGenerateJavaSourceFiles() throws Exception { 
+	public void testCustomClassSpec() throws Exception { 
 		//given
 		FieldSpecification field = new FieldSpecification("test", "String");
 		FuncSpecification func = new FuncSpecification();
@@ -40,7 +38,7 @@ public class mockupGenerateControllerTest {
 
 		//when
 		generator.generateJavaSourceFiles(Arrays.asList(classSpec), file);
-		
-		//then
 	}
+	
+	
 }

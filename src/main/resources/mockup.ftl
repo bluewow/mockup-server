@@ -15,7 +15,7 @@ public class ${spec.name}Controller {
 -->
 
 	@${spec.funcSpecifications.httpMethod}Mapping("${spec.funcSpecifications.path}")
-	public String ${spec.funcSpecifications.funcName} () {
+	public ${spec.funcSpecifications.returnType} ${spec.funcSpecifications.funcName} () {
 		return "Hello World";
 	}
 }

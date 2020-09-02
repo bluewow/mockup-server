@@ -15,7 +15,7 @@ public class FuncSpecification {
 		this.path = "/chat/getMember";
 		this.response = "";
 		this.params = "";
-		this.returnType = "";
+		this.returnType = "String";
 	}
 	
 	public FuncSpecification(String funcName, String httpMethod, String path, String response, String params, String returnType) {
